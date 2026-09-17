@@ -1,0 +1,24 @@
+﻿# =================================================================
+# FORESIGHT AI — Demand & Inventory Intelligence Platform
+# Dependencies & Requirements Specification
+# =================================================================
+#
+# Built strictly with the Python 3 Standard Library.
+# ZERO external pip packages, ZERO npm packages, ZERO external CDNs.
+#
+# System Requirements:
+# - Python >= 3.9 (Standard Library)
+#   Included built-ins:
+#     - http.server
+#     - json
+#     - csv
+#     - math
+#     - sqlite3
+#     - hashlib & hmac
+#     - urllib.parse
+#     - pathlib
+#     - unittest
+#
+# For testing and verification:
+# Run all unit tests natively with:
+#   python -m unittest discover -s tests

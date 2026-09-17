@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORESIGHT AI — Demand &amp; Inventory Intelligence</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- ========================================================= -->
+    <!-- LEFT SIDEBAR                                              -->
+    <!-- ========================================================= -->
+    <aside class="sidebar">
+      <!-- Brand Section -->
+      <div class="sidebar-brand">
+        <div class="brand-badge-wrap">
+          <div class="brand-text">
+            <span class="brand-title">FORESIGHT</span>
+            <span class="brand-ai">AI</span>
+          </div>
+          <span class="brand-pulse-indicator" title="Connected to local engine"></span>
+        </div>
+        <div class="brand-tagline">Demand &amp; Inventory Intelligence</div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <div class="nav-group-label">PLATFORM</div>
+        <button class="nav-item active" data-tab="overview">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Overview</span>
+        </button>
+        <button class="nav-item" data-tab="forecast">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Demand Forecast</span>
+        </button>
+        <button class="nav-item" data-tab="inventory">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Inventory</span>
+        </button>
+        <button class="nav-item" data-tab="stockout">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Stockout Risk</span>
+        </button>
+        <button class="nav-item" data-tab="reorder">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Reorder</span>
+        </button>
+        <button class="nav-item" data-tab="products">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Products</span>
+        </button>
+
+        <div class="nav-group-label">OPERATIONS &amp; AUDIT</div>
+        <button class="nav-item" data-tab="quality">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Data Quality</span>
+        </button>
+        <button class="nav-item" data-tab="models">
+          <span class="nav-bullet"></span>
+          <span class="nav-label">Model Performance</span>
+        </button>
+      </nav>
+
+      <!-- Sidebar Footer Status -->
+      <div class="sidebar-footer">
+        <div class="data-status-pill">
+          <span class="status-live-dot">●</span>
+          <div class="status-meta">
+            <div class="status-title">Live Dataset</div>
+            <div class="status-detail">4 Files • 36,550 Rows</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========================================================= -->
+    <!-- MAIN WORKSPACE VIEWPORT                                   -->
+    <!-- ========================================================= -->
+    <div class="main-wrapper">
+      <!-- Top Application Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-breadcrumb" id="hdr-breadcrumb">PLATFORM / OVERVIEW</div>
+          <h1 class="header-title" id="page-title">Executive Overview</h1>
+          <div class="header-desc" id="page-desc">Centralized visibility into sales demand velocity, warehouse inventory, and replenishment urgency.</div>
+        </div>
+        <div class="header-right">
+          <div class="status-chip">
+            <span class="chip-dot">●</span>
+            <span class="chip-text">DATA CONNECTED</span>
+          </div>
+          <div class="header-user-badge" title="Active Operations Workspace">
+            <span class="user-avatar">OP</span>
+            <span class="user-role">Operations Lead</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Scrollable Body -->
+      <main class="content-container">
+
+        <!-- ===================================================== -->
+        <!-- 1. EXECUTIVE OVERVIEW                                 -->
+        <!-- ===================================================== -->
+        <section id="tab-overview" class="tab-pane active">
+          <!-- Page Eyebrow & Hero Header -->
+          <div class="page-hero">
+            <div class="eyebrow">EXECUTIVE OVERVIEW</div>
+            <h2 class="hero-heading">Demand &amp; Inventory Intelligence</h2>
+            <p class="hero-sub">Monitor demand trends, inventory health and operational risk from one centralized view.</p>
+          </div>
+
+          <!-- Executive KPI Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-meta-row">
+                <span class="kpi-label">TOTAL SKUs</span>
+                <span class="kpi-tag">5 Categories</span>
+              </div>
+              <div class="kpi-metric" id="ov-total-products">50</div>
+              <div class="kpi-context">Verified Catalog Items</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-meta-row">
+                <span class="kpi-label">TOTAL UNITS SOLD</span>
+                <span class="kpi-tag tag-success">731 Days</span>
+              </div>
+              <div class="kpi-metric" id="ov-total-units">377,294</div>
+              <div class="kpi-context">Continuous transactional demand</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-meta-row">
+                <span class="kpi-label">GROSS SALES REVENUE</span>
+                <span class="kpi-tag tag-info">Cumulative</span>
+              </div>
+              <div class="kpi-metric" id="ov-total-revenue">$3.09B</div>
+              <div class="kpi-context">Actual transactional revenue</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-meta-row">
+                <span class="kpi-label">CURRENT INVENTORY</span>
+                <span class="kpi-tag">Valuation</span>
+              </div>
+              <div class="kpi-metric" id="ov-inventory-value">$42.2M</div>
+              <div class="kpi-context"><span id="ov-inventory-units">-</span> physical units on hand</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-meta-row">
+                <span class="kpi-label">DAILY DEMAND RUN-RATE</span>
+                <span class="kpi-tag tag-info">Velocity</span>
+              </div>
+              <div class="kpi-metric" id="ov-daily-demand">516.1</div>
+              <div class="kpi-context">Units sold per calendar day</div>
+            </div>
+
+            <div class="kpi-card kpi-card-danger">
+              <div class="kpi-meta-row">
+                <span class="kpi-label">STOCKOUT RISK EXPOSURE</span>
+                <span class="kpi-tag tag-danger">Attention</span>
+              </div>
+              <div class="kpi-metric text-danger" id="ov-stockout-risk">10</div>
+              <div class="kpi-context">SKUs with coverage &le; Lead Time</div>
+            </div>
+          </div>
+
+          <!-- Deterministic AI Business Insights -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Executive AI Business Insights</h3>
+                <p class="card-sub">Traceable analytical intelligence derived deterministically from historical sales and inventory positions</p>
+              </div>
+              <span class="pill-badge">Deterministic Python Engine</span>
+            </div>
+            <div class="card-body">
+              <div class="insights-grid" id="ov-insights-container">
+                <!-- Dynamically populated insights -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Analytics Grid: Demand Trend + Inventory Health -->
+          <div class="grid-layout-2-1 mb-6">
+            <!-- Demand Trend Card -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Demand Trend</h3>
+                  <p class="card-sub">Historical transactional sales velocity over time</p>
+                </div>
+                <div class="filter-btn-group">
+                  <button class="time-btn" data-period="7D">7D</button>
+                  <button class="time-btn" data-period="30D">30D</button>
+                  <button class="time-btn" data-period="90D">90D</button>
+                  <button class="time-btn active" data-period="ALL">ALL (24M)</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="canvas-box" id="demandTrendBox">
+                  <canvas id="monthlyDemandCanvas" width="720" height="260"></canvas>
+                  <div id="demandTooltip" class="chart-tooltip"></div>
+                </div>
+                <div class="chart-footer-meta">
+                  <span>Units: Physical Items Sold</span>
+                  <span>Range: 2024-01-01 to 2025-12-31</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inventory Health Card -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Inventory Health</h3>
+                  <p class="card-sub">Current stock distribution across coverage tiers</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- Segmented Progress Bar -->
+                <div class="segmented-bar-container mb-4">
+                  <div class="segmented-bar" id="ov-segmented-health">
+                    <div class="segment segment-healthy" style="width: 32%" title="Healthy: 16 SKUs"></div>
+                    <div class="segment segment-low" style="width: 30%" title="Low Stock: 15 SKUs"></div>
+                    <div class="segment segment-critical" style="width: 16%" title="Critical: 8 SKUs"></div>
+                    <div class="segment segment-overstock" style="width: 22%" title="Overstock: 11 SKUs"></div>
+                  </div>
+                </div>
+
+                <!-- Status Legend List -->
+                <div class="status-legend-list" id="ov-health-legend">
+                  <div class="legend-row">
+                    <span class="legend-dot dot-healthy"></span>
+                    <span class="legend-label">Healthy (16 - 45 Days)</span>
+                    <span class="legend-val" id="ov-count-healthy">16 SKUs</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot dot-low"></span>
+                    <span class="legend-label">Low Stock (8 - 15 Days)</span>
+                    <span class="legend-val" id="ov-count-low">15 SKUs</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot dot-critical"></span>
+                    <span class="legend-label">Critical (&le; 7 Days)</span>
+                    <span class="legend-val text-danger" id="ov-count-critical">8 SKUs</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot dot-overstock"></span>
+                    <span class="legend-label">Overstock (&gt; 45 Days)</span>
+                    <span class="legend-val" id="ov-count-overstock">11 SKUs</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot dot-out"></span>
+                    <span class="legend-label">Out of Stock (0 Units)</span>
+                    <span class="legend-val" id="ov-count-out">0 SKUs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Grid: Top Products + Stockout Risk -->
+          <div class="grid-layout-2-1 mb-6">
+            <!-- Top Products Card -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Top Products</h3>
+                  <p class="card-sub">Top commercial revenue contributors in the portfolio</p>
+                </div>
+                <button class="text-link-btn" onclick="switchTab('products')">View all &rarr;</button>
+              </div>
+              <div class="card-body p-0 table-responsive">
+                <table class="saas-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 48px;">#</th>
+                      <th>Product</th>
+                      <th>SKU</th>
+                      <th class="text-right">Demand</th>
+                      <th class="text-right">Inventory</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ov-top-products-tbody">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Stockout Risk Panel -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Stockout Risk</h3>
+                  <p class="card-sub">Items requiring immediate replenishment action</p>
+                </div>
+                <button class="text-link-btn" onclick="switchTab('stockout')">View Risk Analysis &rarr;</button>
+              </div>
+              <div class="card-body p-0 table-responsive">
+                <table class="saas-table">
+                  <thead>
+                    <tr>
+                      <th>SKU</th>
+                      <th>Product</th>
+                      <th class="text-right">Stock</th>
+                      <th class="text-right">Days Left</th>
+                      <th>Risk</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ov-stockout-panel-tbody">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 2. DEMAND FORECASTING                                 -->
+        <!-- ===================================================== -->
+        <section id="tab-forecast" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">DEMAND FORECAST</div>
+            <h2 class="hero-heading">Demand Forecasting</h2>
+            <p class="hero-sub">Understand expected future demand using historical sales patterns.</p>
+          </div>
+
+          <!-- Filter Controls Bar -->
+          <div class="toolbar-card mb-6">
+            <div class="toolbar-group">
+              <div class="field-item">
+                <label for="fc-sku-select">Product / SKU</label>
+                <select id="fc-sku-select" class="form-select select-lg">
+                  <!-- Populated via JS -->
+                </select>
+              </div>
+
+              <div class="field-item">
+                <label for="fc-category-filter">Category</label>
+                <select id="fc-category-filter" class="form-select">
+                  <option value="ALL">All Categories</option>
+                </select>
+              </div>
+
+              <div class="field-item">
+                <label>Location</label>
+                <div class="disabled-pill" title="Location dimension does not exist in source dataset">
+                  Data not available in source dataset
+                </div>
+              </div>
+            </div>
+
+            <div class="toolbar-group">
+              <div class="field-item">
+                <label>Forecast Horizon</label>
+                <div class="horizon-toggle-group">
+                  <button class="hz-btn" data-horizon="7">7 Days</button>
+                  <button class="hz-btn active" data-horizon="14">14 Days</button>
+                  <button class="hz-btn" data-horizon="30">30 Days</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Metric Cards -->
+          <div class="kpi-grid mb-6">
+            <div class="kpi-card">
+              <div class="kpi-label">EXPECTED DEMAND</div>
+              <div class="kpi-metric" id="fc-kpi-total-expected">-</div>
+              <div class="kpi-context">Total forecast units in horizon</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">FORECAST HORIZON</div>
+              <div class="kpi-metric" id="fc-kpi-horizon-text">14 Days</div>
+              <div class="kpi-context">Ahead of latest transaction date</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">ALGORITHMIC MODEL</div>
+              <div class="kpi-metric text-sm" id="fc-kpi-model">-</div>
+              <div class="kpi-context">Selected by validation tournament</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">MODEL ACCURACY (WAPE)</div>
+              <div class="kpi-metric" id="fc-kpi-wape">-</div>
+              <div class="kpi-context">Weighted Absolute % Error on holdout</div>
+            </div>
+          </div>
+
+          <!-- Forecast Canvas Visualization Card -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Historical Actuals vs Forecast Projection</h3>
+                <p class="card-sub">Recent 30-day transactional velocity joined with future horizon &amp; 95% confidence bounds</p>
+              </div>
+              <div class="chart-legend-box">
+                <span class="legend-entry"><span class="legend-line line-history"></span> Historical Actuals</span>
+                <span class="legend-entry"><span class="legend-line line-forecast"></span> Forecast Projection</span>
+                <span class="legend-entry"><span class="legend-band"></span> 95% Prediction Interval</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="canvas-box" id="forecastBox">
+                <canvas id="forecastCanvas" width="920" height="300"></canvas>
+                <div id="forecastTooltip" class="chart-tooltip"></div>
+              </div>
+              <div class="disclaimer-note mt-3">
+                * Projections represent statistical expectations derived from empirical velocity. Predictions are not guaranteed sales.
+              </div>
+            </div>
+          </div>
+
+          <!-- Forecast Day-by-Day Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Day-by-Day Forecast Schedule</h3>
+                <p class="card-sub">Detailed point estimates and confidence intervals</p>
+              </div>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Weekday</th>
+                    <th class="text-right">Point Forecast</th>
+                    <th class="text-right">Lower Bound (95%)</th>
+                    <th class="text-right">Upper Bound (95%)</th>
+                    <th class="text-right">Cumulative Demand</th>
+                  </tr>
+                </thead>
+                <tbody id="fc-daily-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 3. INVENTORY INTELLIGENCE                             -->
+        <!-- ===================================================== -->
+        <section id="tab-inventory" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">INVENTORY INTELLIGENCE</div>
+            <h2 class="hero-heading">Inventory Health &amp; Coverage</h2>
+            <p class="hero-sub">Monitor stock levels, daily sales velocity, days of inventory remaining, and replenishment points.</p>
+          </div>
+
+          <!-- Top Inventory KPI Row -->
+          <div class="kpi-grid mb-6">
+            <div class="kpi-card">
+              <div class="kpi-label">TOTAL INVENTORY</div>
+              <div class="kpi-metric" id="inv-kpi-stock">-</div>
+              <div class="kpi-context">Total units on hand</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">LOW STOCK</div>
+              <div class="kpi-metric text-warning" id="inv-kpi-low">-</div>
+              <div class="kpi-context">Coverage: 8 to 15 Days</div>
+            </div>
+
+            <div class="kpi-card kpi-card-danger">
+              <div class="kpi-label">CRITICAL STOCK</div>
+              <div class="kpi-metric text-danger" id="inv-kpi-critical">-</div>
+              <div class="kpi-context">Coverage: &le; 7 Days</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">OVERSTOCK</div>
+              <div class="kpi-metric" id="inv-kpi-overstock">-</div>
+              <div class="kpi-context">Coverage: &gt; 45 Days</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">INVENTORY VALUATION</div>
+              <div class="kpi-metric" id="inv-kpi-value">-</div>
+              <div class="kpi-context">At verified unit cost price</div>
+            </div>
+          </div>
+
+          <!-- Inventory Filter Toolbar -->
+          <div class="toolbar-card mb-6">
+            <div class="toolbar-group">
+              <div class="field-item">
+                <input type="text" id="inv-search-input" class="form-input search-input" placeholder="Search SKU, Product name, Category...">
+              </div>
+              <div class="field-item">
+                <select id="inv-status-filter" class="form-select">
+                  <option value="ALL">All Stock Statuses</option>
+                  <option value="Healthy">Healthy (16 - 45 Days)</option>
+                  <option value="Low Stock">Low Stock (8 - 15 Days)</option>
+                  <option value="Critical">Critical (&le; 7 Days)</option>
+                  <option value="Overstock">Overstock (&gt; 45 Days)</option>
+                  <option value="Out of Stock">Out of Stock (0 Units)</option>
+                </select>
+              </div>
+            </div>
+            <div class="toolbar-group">
+              <button class="btn btn-secondary" onclick="exportData('inventory')">Export CSV</button>
+            </div>
+          </div>
+
+          <!-- Large Inventory Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Inventory Master Matrix</h3>
+                <p class="card-sub">Real warehouse balances, daily burn velocity, days remaining, and status</p>
+              </div>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th class="text-right">Current Stock</th>
+                    <th class="text-right">Avg Daily Demand</th>
+                    <th class="text-right">Days Remaining</th>
+                    <th>Status</th>
+                    <th class="text-right">Reorder Point</th>
+                    <th class="text-right">Lead Time</th>
+                  </tr>
+                </thead>
+                <tbody id="inv-matrix-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 4. STOCKOUT RISK                                      -->
+        <!-- ===================================================== -->
+        <section id="tab-stockout" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">OPERATIONAL RISK</div>
+            <h2 class="hero-heading">Stockout Risk</h2>
+            <p class="hero-sub">Identify products that may require attention based on current inventory and expected demand.</p>
+          </div>
+
+          <!-- Risk Summary Cards -->
+          <div class="kpi-grid mb-6">
+            <div class="kpi-card kpi-card-danger">
+              <div class="kpi-label">HIGH RISK</div>
+              <div class="kpi-metric text-danger" id="so-kpi-high">10</div>
+              <div class="kpi-context">Stockout occurs within supplier lead time</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">MEDIUM RISK</div>
+              <div class="kpi-metric text-warning" id="so-kpi-medium">10</div>
+              <div class="kpi-context">Stockout occurs within Lead Time + 7 days</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">LOW RISK</div>
+              <div class="kpi-metric text-success" id="so-kpi-low">30</div>
+              <div class="kpi-context">Comfortable inventory coverage</div>
+            </div>
+          </div>
+
+          <!-- Split View: Table Left, Detail View Right -->
+          <div class="split-view-container mb-6">
+            <!-- Left: Table -->
+            <div class="card split-main">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Stockout Vulnerability Register</h3>
+                  <p class="card-sub">Select any product to inspect detailed operational risk profile</p>
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="exportData('stockout')">Export CSV</button>
+              </div>
+              <div class="card-body p-0 table-responsive">
+                <table class="saas-table">
+                  <thead>
+                    <tr>
+                      <th>SKU</th>
+                      <th>Product</th>
+                      <th class="text-right">Current Stock</th>
+                      <th class="text-right">Days Left</th>
+                      <th>Risk</th>
+                    </tr>
+                  </thead>
+                  <tbody id="so-table-tbody">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Right: Detail Panel -->
+            <div class="card split-detail" id="so-detail-panel">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title" id="so-det-title">Product Risk Profile</h3>
+                  <p class="card-sub" id="so-det-sub">Click a row on the left to inspect</p>
+                </div>
+              </div>
+              <div class="card-body" id="so-det-body">
+                <div class="empty-state-box">
+                  <div class="empty-title">Select a Product</div>
+                  <div class="empty-desc">Choose any SKU from the vulnerability register to view run-out burn-down and lead-time analysis.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 5. REORDER RECOMMENDATIONS                            -->
+        <!-- ===================================================== -->
+        <section id="tab-reorder" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">PROCUREMENT SCHEDULE</div>
+            <h2 class="hero-heading">Reorder Recommendations</h2>
+            <p class="hero-sub">Products requiring replenishment based on verified reorder triggers and safety stock buffers.</p>
+          </div>
+
+          <!-- Reorder KPI Row -->
+          <div class="kpi-grid mb-6">
+            <div class="kpi-card kpi-card-danger">
+              <div class="kpi-label">REORDERS REQUIRED</div>
+              <div class="kpi-metric text-danger" id="ro-kpi-count">-</div>
+              <div class="kpi-context">Inventory &le; Reorder Point (ROP)</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">RECOMMENDED QUANTITY</div>
+              <div class="kpi-metric" id="ro-kpi-units">-</div>
+              <div class="kpi-context">Units recommended for purchase</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">ESTIMATED CAPITAL COST</div>
+              <div class="kpi-metric" id="ro-kpi-cost">-</div>
+              <div class="kpi-context">Procurement expenditure required</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">SERVICE LEVEL TARGET</div>
+              <div class="kpi-metric" id="ro-kpi-service">95.0%</div>
+              <div class="kpi-context">Cycle safety buffer factor Z=1.65</div>
+            </div>
+          </div>
+
+          <!-- Lead Time Override Simulator Toolbar -->
+          <div class="toolbar-card mb-6">
+            <div class="toolbar-group">
+              <div class="field-item">
+                <label for="ro-lead-override">Supplier Lead Time (days)</label>
+                <select id="ro-lead-override" class="form-select">
+                  <option value="ACTUAL">Use Verified per-SKU Lead Times (3 to 14 days)</option>
+                  <option value="5">Simulate: 5 Days (Expedited)</option>
+                  <option value="7">Simulate: 7 Days (Standard)</option>
+                  <option value="10">Simulate: 10 Days</option>
+                  <option value="14">Simulate: 14 Days (Extended)</option>
+                  <option value="21">Simulate: 21 Days (Import/Delayed)</option>
+                </select>
+              </div>
+            </div>
+            <div class="toolbar-group">
+              <button class="btn btn-secondary" onclick="exportData('reorder')">Export CSV</button>
+            </div>
+          </div>
+
+          <!-- Reorder Recommendations Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Replenishment Priority Ledger</h3>
+                <p class="card-sub">Calculated order points, safety buffers, and recommended quantities</p>
+              </div>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th>Priority</th>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th class="text-right">Current Stock</th>
+                    <th class="text-right">Reorder Point</th>
+                    <th class="text-right">Recommended Qty</th>
+                    <th>Suggested Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="ro-table-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 6. PRODUCT ANALYTICS                                  -->
+        <!-- ===================================================== -->
+        <section id="tab-products" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">PORTFOLIO INTELLIGENCE</div>
+            <h2 class="hero-heading">Product Analytics &amp; ABC/XYZ</h2>
+            <p class="hero-sub">Commercial SKU performance, Pareto revenue contribution, and 9-box inventory strategy.</p>
+          </div>
+
+          <!-- ABC-XYZ 9-Box Matrix Card -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">ABC-XYZ Strategic Segmentation (9-Box Grid)</h3>
+                <p class="card-sub">Click any quadrant to filter the catalog below</p>
+              </div>
+              <span class="pill-badge">Interactive Matrix</span>
+            </div>
+            <div class="card-body">
+              <div class="matrix-layout">
+                <div class="matrix-corner">Value \ Volatility</div>
+                <div class="matrix-col-hdr">Class X (Stable &bull; CV &le; 0.50)</div>
+                <div class="matrix-col-hdr">Class Y (Moderate &bull; 0.50 &lt; CV &le; 0.80)</div>
+                <div class="matrix-col-hdr">Class Z (Volatile &bull; CV &gt; 0.80)</div>
+
+                <!-- Row A -->
+                <div class="matrix-row-hdr">Class A<br><span class="hdr-sub">Top 70% Rev</span></div>
+                <div class="matrix-box" onclick="filterByAbcXyz('AX')" id="box-ax">
+                  <div class="box-title">AX: High Value, Stable</div>
+                  <div class="box-metric" id="cell-ax-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-ax-rev">$0</div>
+                  <div class="box-strategy">JIT / Automated orders</div>
+                </div>
+                <div class="matrix-box" onclick="filterByAbcXyz('AY')" id="box-ay">
+                  <div class="box-title">AY: High Value, Moderate</div>
+                  <div class="box-metric" id="cell-ay-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-ay-rev">$0</div>
+                  <div class="box-strategy">Weekly review / Buffer</div>
+                </div>
+                <div class="matrix-box" onclick="filterByAbcXyz('AZ')" id="box-az">
+                  <div class="box-title">AZ: High Value, Volatile</div>
+                  <div class="box-metric" id="cell-az-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-az-rev">$0</div>
+                  <div class="box-strategy">Managerial review</div>
+                </div>
+
+                <!-- Row B -->
+                <div class="matrix-row-hdr">Class B<br><span class="hdr-sub">Next 20% Rev</span></div>
+                <div class="matrix-box" onclick="filterByAbcXyz('BX')" id="box-bx">
+                  <div class="box-title">BX: Medium Value, Stable</div>
+                  <div class="box-metric" id="cell-bx-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-bx-rev">$0</div>
+                  <div class="box-strategy">Batch ROP reorders</div>
+                </div>
+                <div class="matrix-box" onclick="filterByAbcXyz('BY')" id="box-by">
+                  <div class="box-title">BY: Medium Value, Moderate</div>
+                  <div class="box-metric" id="cell-by-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-by-rev">$0</div>
+                  <div class="box-strategy">Standard safety buffer</div>
+                </div>
+                <div class="matrix-box" onclick="filterByAbcXyz('BZ')" id="box-bz">
+                  <div class="box-title">BZ: Medium Value, Volatile</div>
+                  <div class="box-metric" id="cell-bz-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-bz-rev">$0</div>
+                  <div class="box-strategy">Buffer &amp; order review</div>
+                </div>
+
+                <!-- Row C -->
+                <div class="matrix-row-hdr">Class C<br><span class="hdr-sub">Bottom 10% Rev</span></div>
+                <div class="matrix-box" onclick="filterByAbcXyz('CX')" id="box-cx">
+                  <div class="box-title">CX: Low Value, Stable</div>
+                  <div class="box-metric" id="cell-cx-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-cx-rev">$0</div>
+                  <div class="box-strategy">Bulk order / Low touch</div>
+                </div>
+                <div class="matrix-box" onclick="filterByAbcXyz('CY')" id="box-cy">
+                  <div class="box-title">CY: Low Value, Moderate</div>
+                  <div class="box-metric" id="cell-cy-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-cy-rev">$0</div>
+                  <div class="box-strategy">Periodic bulk purchase</div>
+                </div>
+                <div class="matrix-box" onclick="filterByAbcXyz('CZ')" id="box-cz">
+                  <div class="box-title">CZ: Low Value, Volatile</div>
+                  <div class="box-metric" id="cell-cz-count">0 SKUs</div>
+                  <div class="box-rev" id="cell-cz-rev">$0</div>
+                  <div class="box-strategy">On demand / Minimal stock</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Catalog Search Toolbar -->
+          <div class="toolbar-card mb-6">
+            <div class="toolbar-group">
+              <div class="field-item">
+                <input type="text" id="prod-search-input" class="form-input search-input" placeholder="Search product name, SKU...">
+              </div>
+              <div class="field-item">
+                <select id="prod-cat-filter" class="form-select">
+                  <option value="ALL">All Categories</option>
+                </select>
+              </div>
+              <div id="active-abc-filter-chip" class="filter-chip" style="display: none;" onclick="clearAbcFilter()">
+                <span>Filtered: <strong id="active-abc-name">AX</strong></span>
+                <span class="chip-remove">&times;</span>
+              </div>
+            </div>
+            <div class="toolbar-group">
+              <button class="btn btn-secondary" onclick="exportData('products')">Export Catalog (CSV)</button>
+            </div>
+          </div>
+
+          <!-- Product Catalog Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Commercial Product Directory</h3>
+                <p class="card-sub">Click any row to open the complete SKU deep-dive analytics drawer</p>
+              </div>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th class="text-right">Cost Price</th>
+                    <th class="text-right">Selling Price</th>
+                    <th class="text-right">Units Sold</th>
+                    <th class="text-right">Total Revenue</th>
+                    <th class="text-right">Current Stock</th>
+                    <th>Status</th>
+                    <th>ABC-XYZ</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="prod-table-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 7. DATA QUALITY                                       -->
+        <!-- ===================================================== -->
+        <section id="tab-quality" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">INTEGRITY &amp; AUDIT</div>
+            <h2 class="hero-heading">Data Quality</h2>
+            <p class="hero-sub">Complete audit of ingested source datasets, missing values, duplicates, and semantic business mappings.</p>
+          </div>
+
+          <!-- Data Quality Overview Cards -->
+          <div class="kpi-grid mb-6">
+            <div class="kpi-card">
+              <div class="kpi-label">DATA COVERAGE</div>
+              <div class="kpi-metric">731 Days</div>
+              <div class="kpi-context">2024-01-01 to 2025-12-31</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">RECORDS INGESTED</div>
+              <div class="kpi-metric">36,550</div>
+              <div class="kpi-context">Daily sales transactions</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">MISSING VALUES</div>
+              <div class="kpi-metric text-success">0</div>
+              <div class="kpi-context">100% field completeness</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">DUPLICATE ROWS</div>
+              <div class="kpi-metric text-success">0</div>
+              <div class="kpi-context">Strict row uniqueness verified</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">UNIQUE SKUs</div>
+              <div class="kpi-metric">50</div>
+              <div class="kpi-context">100% linked across files</div>
+            </div>
+          </div>
+
+          <!-- Field Mapping Dictionary Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Semantic Field Mapping Dictionary</h3>
+                <p class="card-sub">Mapping from source datasets to standardized supply chain entities</p>
+              </div>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th>Field (Concept)</th>
+                    <th>Source File</th>
+                    <th>Source Column</th>
+                    <th>Data Type</th>
+                    <th>Missing %</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dq-mapping-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Raw Files Audit Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Raw Dataset Profiles (data/raw/)</h3>
+                <p class="card-sub">File metadata, record counts, and type verifications</p>
+              </div>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th>File Name</th>
+                    <th class="text-right">Records</th>
+                    <th class="text-right">Columns</th>
+                    <th class="text-right">Nulls</th>
+                    <th class="text-right">Duplicates</th>
+                    <th>Coverage Period</th>
+                    <th>Verification Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dq-audit-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 8. MODEL PERFORMANCE                                  -->
+        <!-- ===================================================== -->
+        <section id="tab-models" class="tab-pane">
+          <div class="page-hero">
+            <div class="eyebrow">BENCHMARKING</div>
+            <h2 class="hero-heading">Model Performance</h2>
+            <p class="hero-sub">Out-of-sample temporal holdout evaluation across candidate forecasting algorithms.</p>
+          </div>
+
+          <!-- Holdout Details Card -->
+          <div class="callout-card mb-6">
+            <div class="callout-title">Validation Protocol (No Lookahead Bias)</div>
+            <div class="callout-body">
+              Models are trained on historical sales from <strong>2024-01-01 to 2025-11-01 (671 days)</strong> and validated against the final <strong>60 days (2025-11-02 to 2025-12-31)</strong>. No random splitting is used, preserving chronological integrity.
+            </div>
+          </div>
+
+          <!-- Model Leaderboard Table -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Algorithm Benchmark Tournament</h3>
+                <p class="card-sub">Ranked by Weighted Absolute Percentage Error (WAPE) on holdout validation data</p>
+              </div>
+              <span class="pill-badge" id="mp-top-model-tag">Winner: Calculating...</span>
+            </div>
+            <div class="card-body p-0 table-responsive">
+              <table class="saas-table">
+                <thead>
+                  <tr>
+                    <th style="width: 48px;">Rank</th>
+                    <th>Model</th>
+                    <th class="text-right">WAPE</th>
+                    <th class="text-right">MAE</th>
+                    <th class="text-right">RMSE</th>
+                    <th class="text-right">Evaluated SKUs</th>
+                    <th>Mechanism</th>
+                  </tr>
+                </thead>
+                <tbody id="mp-leaderboard-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Mathematical Formulations -->
+          <div class="metrics-grid mb-6">
+            <div class="card p-4">
+              <div class="metric-doc-title">WAPE (Primary Metric)</div>
+              <div class="metric-doc-formula">WAPE = &sum;|Actual - Forecast| / &sum;Actual &times; 100</div>
+              <div class="metric-doc-desc">Weights errors by physical sales volume; resilient against zero-demand days where standard MAPE breaks down.</div>
+            </div>
+            <div class="card p-4">
+              <div class="metric-doc-title">MAE (Mean Absolute Error)</div>
+              <div class="metric-doc-formula">MAE = (1/n) &sum;|Actual - Forecast|</div>
+              <div class="metric-doc-desc">Average magnitude of errors expressed directly in daily physical units sold.</div>
+            </div>
+            <div class="card p-4">
+              <div class="metric-doc-title">RMSE (Root Mean Squared Error)</div>
+              <div class="metric-doc-formula">RMSE = &radic;[ (1/n) &sum;(Actual - Forecast)&sup2; ]</div>
+              <div class="metric-doc-desc">Quadratic penalty penalizing large isolated forecast mistakes.</div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- SKU Deep-Dive Modal Drawer (Text & CSS Only, Zero SVG) -->
+  <div id="sku-modal" class="modal-backdrop" onclick="closeModalOnOutside(event)">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="modal-eyebrow">SKU INTELLIGENCE</div>
+          <h3 class="modal-title" id="modal-sku-title">Product Details</h3>
+          <div class="modal-sub" id="modal-sku-sub">-</div>
+        </div>
+        <button class="btn-close-text" onclick="closeModal()">Close &times;</button>
+      </div>
+      <div class="modal-body-content" id="modal-sku-body">
+        <!-- Dynamically injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

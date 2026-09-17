@@ -1,0 +1,775 @@
+{
+  "files_found": [
+    "calendar.csv",
+    "inventory_snapshots.csv",
+    "sales_daily.csv",
+    "sku_master.csv"
+  ],
+  "profiles": {
+    "calendar.csv": {
+      "filename": "calendar.csv",
+      "filepath": "data\\raw\\calendar.csv",
+      "row_count": 731,
+      "column_count": 11,
+      "columns": [
+        "date",
+        "year",
+        "month",
+        "quarter",
+        "week",
+        "day_of_week",
+        "is_weekend",
+        "season",
+        "holiday",
+        "is_holiday",
+        "promotion_event"
+      ],
+      "column_types": {
+        "date": "date",
+        "year": "integer",
+        "month": "integer",
+        "quarter": "string",
+        "week": "integer",
+        "day_of_week": "string",
+        "is_weekend": "integer",
+        "season": "string",
+        "is_holiday": "integer",
+        "holiday": "string",
+        "promotion_event": "string"
+      },
+      "null_counts": {
+        "date": 0,
+        "year": 0,
+        "month": 0,
+        "quarter": 0,
+        "week": 0,
+        "day_of_week": 0,
+        "is_weekend": 0,
+        "season": 0,
+        "holiday": 723,
+        "is_holiday": 0,
+        "promotion_event": 656
+      },
+      "unique_counts": {
+        "date": 731,
+        "year": 2,
+        "month": 12,
+        "quarter": 4,
+        "week": 52,
+        "day_of_week": 7,
+        "is_weekend": 2,
+        "season": 5,
+        "holiday": 4,
+        "is_holiday": 2,
+        "promotion_event": 1
+      },
+      "negative_counts": {
+        "date": 0,
+        "year": 0,
+        "month": 0,
+        "quarter": 0,
+        "week": 0,
+        "day_of_week": 0,
+        "is_weekend": 0,
+        "season": 0,
+        "holiday": 0,
+        "is_holiday": 0,
+        "promotion_event": 0
+      },
+      "zero_counts": {
+        "date": 0,
+        "year": 0,
+        "month": 0,
+        "quarter": 0,
+        "week": 0,
+        "day_of_week": 0,
+        "is_weekend": 523,
+        "season": 0,
+        "holiday": 0,
+        "is_holiday": 723,
+        "promotion_event": 0
+      },
+      "min_values": {
+        "year": 2024.0,
+        "month": 1.0,
+        "week": 1.0,
+        "is_weekend": 0.0,
+        "is_holiday": 0.0
+      },
+      "max_values": {
+        "year": 2025.0,
+        "month": 12.0,
+        "week": 52.0,
+        "is_weekend": 1.0,
+        "is_holiday": 1.0
+      },
+      "duplicate_rows": 0,
+      "date_summary": {
+        "min_date": "2024-01-01",
+        "max_date": "2025-12-31",
+        "distinct_dates": 731
+      },
+      "encoding": "utf-8",
+      "delimiter": ","
+    },
+    "inventory_snapshots.csv": {
+      "filename": "inventory_snapshots.csv",
+      "filepath": "data\\raw\\inventory_snapshots.csv",
+      "row_count": 4800,
+      "column_count": 8,
+      "columns": [
+        "Snapshot_Date",
+        "SKU",
+        "Current_Stock",
+        "On_Order",
+        "Lead_Time_Days",
+        "Safety_Stock",
+        "Reorder_Point",
+        "Inventory_Value"
+      ],
+      "column_types": {
+        "Snapshot_Date": "date",
+        "SKU": "string",
+        "Current_Stock": "integer",
+        "On_Order": "integer",
+        "Lead_Time_Days": "integer",
+        "Safety_Stock": "integer",
+        "Reorder_Point": "integer",
+        "Inventory_Value": "float"
+      },
+      "null_counts": {
+        "Snapshot_Date": 0,
+        "SKU": 0,
+        "Current_Stock": 0,
+        "On_Order": 0,
+        "Lead_Time_Days": 0,
+        "Safety_Stock": 0,
+        "Reorder_Point": 0,
+        "Inventory_Value": 0
+      },
+      "unique_counts": {
+        "Snapshot_Date": 24,
+        "SKU": 200,
+        "Current_Stock": 954,
+        "On_Order": 822,
+        "Lead_Time_Days": 12,
+        "Safety_Stock": 341,
+        "Reorder_Point": 715,
+        "Inventory_Value": 4630
+      },
+      "negative_counts": {
+        "Snapshot_Date": 0,
+        "SKU": 0,
+        "Current_Stock": 0,
+        "On_Order": 0,
+        "Lead_Time_Days": 0,
+        "Safety_Stock": 0,
+        "Reorder_Point": 0,
+        "Inventory_Value": 0
+      },
+      "zero_counts": {
+        "Snapshot_Date": 0,
+        "SKU": 0,
+        "Current_Stock": 0,
+        "On_Order": 33,
+        "Lead_Time_Days": 0,
+        "Safety_Stock": 0,
+        "Reorder_Point": 0,
+        "Inventory_Value": 0
+      },
+      "min_values": {
+        "Current_Stock": 2.0,
+        "On_Order": 0.0,
+        "Lead_Time_Days": 3.0,
+        "Safety_Stock": 5.0,
+        "Reorder_Point": 10.0,
+        "Inventory_Value": 2444.2
+      },
+      "max_values": {
+        "Current_Stock": 2585.0,
+        "On_Order": 3060.0,
+        "Lead_Time_Days": 14.0,
+        "Safety_Stock": 746.0,
+        "Reorder_Point": 1661.0,
+        "Inventory_Value": 20279867.85
+      },
+      "duplicate_rows": 0,
+      "date_summary": {
+        "min_date": "2024-01-01",
+        "max_date": "2025-12-01",
+        "distinct_dates": 24
+      },
+      "encoding": "utf-8",
+      "delimiter": ","
+    },
+    "sales_daily.csv": {
+      "filename": "sales_daily.csv",
+      "filepath": "data\\raw\\sales_daily.csv",
+      "row_count": 36550,
+      "column_count": 6,
+      "columns": [
+        "Date",
+        "SKU",
+        "Units_Sold",
+        "Revenue",
+        "Price",
+        "Promotion"
+      ],
+      "column_types": {
+        "Date": "date",
+        "SKU": "string",
+        "Units_Sold": "integer",
+        "Revenue": "float",
+        "Price": "float",
+        "Promotion": "integer"
+      },
+      "null_counts": {
+        "Date": 0,
+        "SKU": 0,
+        "Units_Sold": 0,
+        "Revenue": 0,
+        "Price": 0,
+        "Promotion": 0
+      },
+      "unique_counts": {
+        "Date": 731,
+        "SKU": 50,
+        "Units_Sold": 55,
+        "Revenue": 1327,
+        "Price": 50,
+        "Promotion": 2
+      },
+      "negative_counts": {
+        "Date": 0,
+        "SKU": 0,
+        "Units_Sold": 0,
+        "Revenue": 0,
+        "Price": 0,
+        "Promotion": 0
+      },
+      "zero_counts": {
+        "Date": 0,
+        "SKU": 0,
+        "Units_Sold": 202,
+        "Revenue": 202,
+        "Price": 0,
+        "Promotion": 32800
+      },
+      "min_values": {
+        "Units_Sold": 0.0,
+        "Revenue": 0.0,
+        "Price": 663.46,
+        "Promotion": 0.0
+      },
+      "max_values": {
+        "Units_Sold": 56.0,
+        "Revenue": 546977.0,
+        "Price": 11642.45,
+        "Promotion": 1.0
+      },
+      "duplicate_rows": 0,
+      "date_summary": {
+        "min_date": "2024-01-01",
+        "max_date": "2025-12-31",
+        "distinct_dates": 731
+      },
+      "encoding": "utf-8",
+      "delimiter": ","
+    },
+    "sku_master.csv": {
+      "filename": "sku_master.csv",
+      "filepath": "data\\raw\\sku_master.csv",
+      "row_count": 50,
+      "column_count": 8,
+      "columns": [
+        "SKU",
+        "Product_Name",
+        "Category",
+        "Subcategory",
+        "Launch_Date",
+        "Cost_Price",
+        "Selling_Price",
+        "Gross_Margin_Per_Unit"
+      ],
+      "column_types": {
+        "SKU": "string",
+        "Product_Name": "string",
+        "Category": "string",
+        "Subcategory": "string",
+        "Launch_Date": "date",
+        "Cost_Price": "float",
+        "Selling_Price": "float",
+        "Gross_Margin_Per_Unit": "float"
+      },
+      "null_counts": {
+        "SKU": 0,
+        "Product_Name": 0,
+        "Category": 0,
+        "Subcategory": 0,
+        "Launch_Date": 0,
+        "Cost_Price": 0,
+        "Selling_Price": 0,
+        "Gross_Margin_Per_Unit": 0
+      },
+      "unique_counts": {
+        "SKU": 50,
+        "Product_Name": 50,
+        "Category": 5,
+        "Subcategory": 10,
+        "Launch_Date": 48,
+        "Cost_Price": 50,
+        "Selling_Price": 50,
+        "Gross_Margin_Per_Unit": 50
+      },
+      "negative_counts": {
+        "SKU": 0,
+        "Product_Name": 0,
+        "Category": 0,
+        "Subcategory": 0,
+        "Launch_Date": 0,
+        "Cost_Price": 0,
+        "Selling_Price": 0,
+        "Gross_Margin_Per_Unit": 16
+      },
+      "zero_counts": {
+        "SKU": 0,
+        "Product_Name": 0,
+        "Category": 0,
+        "Subcategory": 0,
+        "Launch_Date": 0,
+        "Cost_Price": 0,
+        "Selling_Price": 0,
+        "Gross_Margin_Per_Unit": 0
+      },
+      "min_values": {
+        "Cost_Price": 307.06,
+        "Selling_Price": 663.46,
+        "Gross_Margin_Per_Unit": -5484.32
+      },
+      "max_values": {
+        "Cost_Price": 7748.2,
+        "Selling_Price": 11642.45,
+        "Gross_Margin_Per_Unit": 10224.93
+      },
+      "duplicate_rows": 0,
+      "date_summary": {
+        "min_date": "2022-03-12",
+        "max_date": "2024-12-09",
+        "distinct_dates": 48
+      },
+      "encoding": "utf-8",
+      "delimiter": ","
+    }
+  },
+  "mappings": {
+    "calendar.csv": {
+      "date": {
+        "source_column": "date",
+        "inferred_type": "date",
+        "status": "Available in source dataset"
+      },
+      "sku": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "product_name": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "category": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "subcategory": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "quantity": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "revenue": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "price": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "cost": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "gross_margin": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "current_stock": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "on_order": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "lead_time": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "safety_stock": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "reorder_point": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "inventory_value": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "promotion": {
+        "source_column": "promotion_event",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "holiday": {
+        "source_column": "holiday",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "location": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "supplier": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      }
+    },
+    "inventory_snapshots.csv": {
+      "date": {
+        "source_column": "Snapshot_Date",
+        "inferred_type": "date",
+        "status": "Available in source dataset"
+      },
+      "sku": {
+        "source_column": "SKU",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "product_name": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "category": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "subcategory": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "quantity": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "revenue": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "price": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "cost": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "gross_margin": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "current_stock": {
+        "source_column": "Current_Stock",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "on_order": {
+        "source_column": "On_Order",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "lead_time": {
+        "source_column": "Lead_Time_Days",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "safety_stock": {
+        "source_column": "Safety_Stock",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "reorder_point": {
+        "source_column": "Reorder_Point",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "inventory_value": {
+        "source_column": "Inventory_Value",
+        "inferred_type": "float",
+        "status": "Available in source dataset"
+      },
+      "promotion": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "holiday": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "location": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "supplier": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      }
+    },
+    "sales_daily.csv": {
+      "date": {
+        "source_column": "Date",
+        "inferred_type": "date",
+        "status": "Available in source dataset"
+      },
+      "sku": {
+        "source_column": "SKU",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "product_name": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "category": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "subcategory": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "quantity": {
+        "source_column": "Units_Sold",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "revenue": {
+        "source_column": "Revenue",
+        "inferred_type": "float",
+        "status": "Available in source dataset"
+      },
+      "price": {
+        "source_column": "Price",
+        "inferred_type": "float",
+        "status": "Available in source dataset"
+      },
+      "cost": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "gross_margin": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "current_stock": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "on_order": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "lead_time": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "safety_stock": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "reorder_point": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "inventory_value": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "promotion": {
+        "source_column": "Promotion",
+        "inferred_type": "integer",
+        "status": "Available in source dataset"
+      },
+      "holiday": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "location": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "supplier": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      }
+    },
+    "sku_master.csv": {
+      "date": {
+        "source_column": "Launch_Date",
+        "inferred_type": "date",
+        "status": "Available in source dataset"
+      },
+      "sku": {
+        "source_column": "SKU",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "product_name": {
+        "source_column": "Product_Name",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "category": {
+        "source_column": "Category",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "subcategory": {
+        "source_column": "Subcategory",
+        "inferred_type": "string",
+        "status": "Available in source dataset"
+      },
+      "quantity": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "revenue": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "price": {
+        "source_column": "Selling_Price",
+        "inferred_type": "float",
+        "status": "Available in source dataset"
+      },
+      "cost": {
+        "source_column": "Cost_Price",
+        "inferred_type": "float",
+        "status": "Available in source dataset"
+      },
+      "gross_margin": {
+        "source_column": "Gross_Margin_Per_Unit",
+        "inferred_type": "float",
+        "status": "Available in source dataset"
+      },
+      "current_stock": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "on_order": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "lead_time": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "safety_stock": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "reorder_point": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "inventory_value": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "promotion": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "holiday": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "location": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      },
+      "supplier": {
+        "source_column": null,
+        "inferred_type": null,
+        "status": "Data not available in source dataset"
+      }
+    }
+  },
+  "timestamp": "2026-09-17T17:55:22.457272"
+}

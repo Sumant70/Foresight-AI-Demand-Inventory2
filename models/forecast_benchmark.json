@@ -1,0 +1,57 @@
+{
+  "train_period": "2024-01-01 to 2025-11-01 (671 days)",
+  "validation_period": "2025-11-02 to 2025-12-31 (60 days)",
+  "total_skus": 50,
+  "leaderboard": [
+    {
+      "model_name": "Moving Average (SMA-30)",
+      "avg_mae": 3.11,
+      "avg_wape": 28.97,
+      "avg_rmse": 3.96,
+      "evaluated_skus": 50
+    },
+    {
+      "model_name": "Exponential Smoothing (SES)",
+      "avg_mae": 3.1,
+      "avg_wape": 28.97,
+      "avg_rmse": 3.93,
+      "evaluated_skus": 50
+    },
+    {
+      "model_name": "Moving Average (SMA-14)",
+      "avg_mae": 3.13,
+      "avg_wape": 29.28,
+      "avg_rmse": 3.99,
+      "evaluated_skus": 50
+    },
+    {
+      "model_name": "Moving Average (SMA-7)",
+      "avg_mae": 3.13,
+      "avg_wape": 29.57,
+      "avg_rmse": 3.96,
+      "evaluated_skus": 50
+    },
+    {
+      "model_name": "Seasonal Naive (7-Day)",
+      "avg_mae": 3.88,
+      "avg_wape": 36.97,
+      "avg_rmse": 4.84,
+      "evaluated_skus": 50
+    },
+    {
+      "model_name": "Naive (Last Value)",
+      "avg_mae": 5.08,
+      "avg_wape": 49.85,
+      "avg_rmse": 5.87,
+      "evaluated_skus": 50
+    },
+    {
+      "model_name": "Holt's Linear Trend",
+      "avg_mae": 6.14,
+      "avg_wape": 59.18,
+      "avg_rmse": 7.18,
+      "evaluated_skus": 50
+    }
+  ],
+  "overall_best_model": "Moving Average (SMA-30)"
+}

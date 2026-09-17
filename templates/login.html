@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — FORESIGHT AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-body">
+  <div class="auth-container">
+    <!-- Left Hero Column: Brand & Security Guarantee -->
+    <div class="auth-hero-panel">
+      <div class="auth-hero-content">
+        <div class="auth-brand">
+          <div class="brand-text">
+            <span class="brand-title">FORESIGHT</span>
+            <span class="brand-ai">AI</span>
+          </div>
+          <span class="brand-pulse-indicator" title="Enterprise Core Connected"></span>
+        </div>
+        <p class="auth-tagline">Demand &amp; Inventory Intelligence Platform</p>
+
+        <!-- Abstract CSS Data Art Grid (Zero SVG) -->
+        <div class="auth-art-card">
+          <div class="art-card-header">
+            <span class="art-card-dot red"></span>
+            <span class="art-card-dot yellow"></span>
+            <span class="art-card-dot green"></span>
+            <span class="art-card-title">FORECASTING ENGINE • SECURE RUNTIME</span>
+          </div>
+          <div class="art-bars-container">
+            <div class="art-bar" style="height: 48%;"></div>
+            <div class="art-bar" style="height: 62%;"></div>
+            <div class="art-bar" style="height: 35%;"></div>
+            <div class="art-bar" style="height: 78%;"></div>
+            <div class="art-bar" style="height: 54%;"></div>
+            <div class="art-bar" style="height: 90%;"></div>
+            <div class="art-bar" style="height: 68%;"></div>
+            <div class="art-bar active" style="height: 84%;"></div>
+            <div class="art-bar" style="height: 72%;"></div>
+            <div class="art-bar" style="height: 96%;"></div>
+          </div>
+          <div class="art-metrics-row">
+            <div class="art-metric">
+              <span class="art-val">96.8%</span>
+              <span class="art-lbl">ACCURACY</span>
+            </div>
+            <div class="art-metric">
+              <span class="art-val">PBKDF2</span>
+              <span class="art-lbl">CIPHER</span>
+            </div>
+            <div class="art-metric">
+              <span class="art-val">RBAC</span>
+              <span class="art-lbl">ENFORCED</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-features-list">
+          <div class="auth-feature-item">
+            <span class="feature-bullet">■</span>
+            <div>
+              <strong>Multi-Echelon Demand Planning:</strong>
+              <span>Machine learning &amp; time-series forecasting with continuous safety stock intelligence.</span>
+            </div>
+          </div>
+          <div class="auth-feature-item">
+            <span class="feature-bullet">■</span>
+            <div>
+              <strong>Enterprise Role-Based Access:</strong>
+              <span>Strictly partitioned Admin, Analyst, and Viewer permissions with full audit logging.</span>
+            </div>
+          </div>
+          <div class="auth-feature-item">
+            <span class="feature-bullet">■</span>
+            <div>
+              <strong>High-Assurance Security:</strong>
+              <span>100,000-round PBKDF2-HMAC-SHA256, CSRF tokens, brute-force lockouts, and HttpOnly sessions.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-hero-footer">
+          &copy; 2026 FORESIGHT AI Intelligence Inc. All rights reserved. Strictly offline, zero-tracking runtime.
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Login Card -->
+    <div class="auth-form-panel">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <div class="auth-card-badge">SECURE ACCESS</div>
+          <h2 class="auth-card-title">Sign in to Foresight AI</h2>
+          <p class="auth-card-subtitle">Enter your enterprise credentials to access inventory models and demand analytics.</p>
+        </div>
+
+        <!-- Dynamic Alert Container -->
+        <div id="auth-alert" class="auth-alert" style="display: none;" role="alert">
+          <span class="alert-icon">!</span>
+          <span id="auth-alert-message" class="alert-text"></span>
+        </div>
+
+        <form id="login-form" class="auth-form" onsubmit="handleLoginSubmit(event)" novalidate>
+          <!-- Username or Email Field -->
+          <div class="form-group">
+            <label for="login-username" class="form-label">Username or Corporate Email</label>
+            <input
+              type="text"
+              id="login-username"
+              name="username"
+              class="form-input"
+              placeholder="e.g. admin or analyst@foresight.ai"
+              autocomplete="username"
+              autofocus
+              required
+            >
+          </div>
+
+          <!-- Password Field with Pure Text Toggle -->
+          <div class="form-group">
+            <div class="form-label-row">
+              <label for="login-password" class="form-label">Password</label>
+              <a href="#forgot" class="form-link" onclick="showForgotPasswordHelp(event)">Forgot password?</a>
+            </div>
+            <div class="password-input-wrapper">
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="form-input"
+                placeholder="Enter your master password"
+                autocomplete="current-password"
+                required
+              >
+              <button
+                type="button"
+                id="password-toggle-btn"
+                class="password-toggle"
+                onclick="togglePasswordVisibility('login-password', this)"
+                aria-label="Toggle password visibility"
+              >Show</button>
+            </div>
+          </div>
+
+          <!-- Options Row -->
+          <div class="form-row-between">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember-me" name="remember">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Keep me signed in on this device</span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="btn-submit" class="btn btn-primary btn-auth-submit">
+            <span id="btn-text">Sign In to Platform</span>
+            <span id="btn-spinner" class="auth-spinner" style="display: none;"></span>
+          </button>
+        </form>
+
+        <!-- Security Compliance Notice -->
+        <div class="auth-compliance-footer">
+          <div class="compliance-pill">
+            <span class="compliance-dot"></span>
+            <span>PBKDF2-HMAC-SHA256 • HttpOnly Session • Zero External CDN</span>
+          </div>
+          <p class="compliance-note">
+            Need access credentials or your account unlocked? Contact your system administrator or run <code>python create_admin.py</code>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Password Help Modal (Text & CSS only, Zero SVG) -->
+  <div id="forgot-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog" style="max-width: 480px;">
+      <div class="modal-head">
+        <div>
+          <div class="modal-eyebrow">SECURITY RECOVERY</div>
+          <h3 class="modal-title">Password Reset Assistance</h3>
+        </div>
+        <button class="btn-close-text" onclick="closeForgotModal()">Close &times;</button>
+      </div>
+      <div class="modal-body-content p-4">
+        <p class="text-secondary mb-3">
+          To maintain zero external attack vectors, automated external email resets are disabled on this standalone deployment.
+        </p>
+        <div class="p-3 bg-slate-50 border rounded text-xs mb-4" style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px; font-size:13px; line-height:1.5;">
+          <strong>For Administrators:</strong><br>
+          Run the following command in terminal to reset the master admin password:
+          <pre style="background:#0f172a; color:#f8fafc; padding:8px 12px; border-radius:4px; margin-top:6px; overflow-x:auto;">python create_admin.py --reset</pre>
+        </div>
+        <p class="text-secondary text-xs">
+          If you are an analyst or viewer, please contact your company IT administrator to reset your credentials.
+        </p>
+        <div class="mt-4 text-right">
+          <button class="btn btn-secondary" onclick="closeForgotModal()">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = 'Hide';
+        btn.setAttribute('aria-label', 'Hide password');
+      } else {
+        input.type = 'password';
+        btn.textContent = 'Show';
+        btn.setAttribute('aria-label', 'Show password');
+      }
+    }
+
+    function showForgotPasswordHelp(e) {
+      if (e) e.preventDefault();
+      const modal = document.getElementById('forgot-modal');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeForgotModal() {
+      const modal = document.getElementById('forgot-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function showAlert(msg, isError = true) {
+      const alertBox = document.getElementById('auth-alert');
+      const alertMsg = document.getElementById('auth-alert-message');
+      if (!alertBox || !alertMsg) return;
+      alertMsg.textContent = msg;
+      alertBox.className = 'auth-alert ' + (isError ? 'alert-danger' : 'alert-success');
+      alertBox.style.display = 'flex';
+    }
+
+    function hideAlert() {
+      const alertBox = document.getElementById('auth-alert');
+      if (alertBox) alertBox.style.display = 'none';
+    }
+
+    async function handleLoginSubmit(event) {
+      event.preventDefault();
+      hideAlert();
+
+      const usernameInput = document.getElementById('login-username');
+      const passwordInput = document.getElementById('login-password');
+      const rememberInput = document.getElementById('remember-me');
+      const btnSubmit = document.getElementById('btn-submit');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
+
+      const username = usernameInput ? usernameInput.value.trim() : '';
+      const password = passwordInput ? passwordInput.value : '';
+      const remember = rememberInput ? rememberInput.checked : false;
+
+      if (!username || !password) {
+        showAlert('Please enter both username/email and password.');
+        return;
+      }
+
+      btnSubmit.disabled = true;
+      btnText.textContent = 'Authenticating...';
+      btnSpinner.style.display = 'inline-block';
+
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password,
+            remember_me: remember
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          btnText.textContent = 'Success! Redirecting...';
+          showAlert('Authentication verified. Redirecting to workspace...', false);
+          const urlParams = new URLSearchParams(window.location.search);
+          const nextUrl = urlParams.get('next') || '/';
+          setTimeout(() => {
+            window.location.href = nextUrl;
+          }, 350);
+        } else {
+          showAlert(data.error || 'Invalid username or password. Please try again.');
+          btnSubmit.disabled = false;
+          btnText.textContent = 'Sign In to Platform';
+          btnSpinner.style.display = 'none';
+          if (passwordInput) passwordInput.value = '';
+        }
+      } catch (err) {
+        showAlert('Network or connection error. Please verify the Foresight server is active.');
+        btnSubmit.disabled = false;
+        btnText.textContent = 'Sign In to Platform';
+        btnSpinner.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
